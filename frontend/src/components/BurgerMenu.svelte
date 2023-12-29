@@ -41,7 +41,7 @@
         left: 0;
         bottom: 0;
         text-align: center;
-        background: #fff;
+        background: #202122;
         opacity: 0;
         z-index: -1;
         visibility: hidden;
@@ -62,7 +62,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: #fedc2a;
+        background: #ffffff;
         transform-origin: 0 0;
         transform: skew(-14deg) translateX(-120%);
         transition: all 0.275s 0.1s;
