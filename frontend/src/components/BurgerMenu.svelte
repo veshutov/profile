@@ -1,10 +1,21 @@
 <script>
     let menuOpen = false;
+
+    function stopTouchScroll() {
+    }
+
     function handleMenuClick() {
-        !menuOpen && window.scrollTo({ top: 0, behavior: "smooth" });
-        let overflowY = menuOpen ? "auto" : "hidden";
-        document.body.style.overflowY = overflowY;
+        let overflowY;
+        if (!menuOpen) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            document.addEventListener("touchmove", stopTouchScroll);
+            overflowY = "hidden";
+        } else {
+            document.removeEventListener("touchmove", stopTouchScroll);
+            overflowY = "auto";
+        }
         menuOpen = !menuOpen;
+        document.body.style.overflowY = overflowY;
     }
 </script>
 
@@ -178,5 +189,4 @@
         transform: translateY(-12px) translateX(10px) skew(-20deg);
         opacity: 0;
     }
-    
 </style>
