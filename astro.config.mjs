@@ -5,8 +5,9 @@ import remarkGfm from 'remark-gfm';
 import remarkSmartypants from 'remark-smartypants';
 import rehypeExternalLinks from 'rehype-external-links';
 import sitemap from '@astrojs/sitemap';
-
 import tailwind from "@astrojs/tailwind";
+
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +21,9 @@ export default defineConfig({
     rehypePlugins: [[rehypeExternalLinks, {
       target: '_blank'
     }]]
-  }
+  },
+  output: "server",
+  adapter: node({
+    mode: "standalone"
+  })
 });

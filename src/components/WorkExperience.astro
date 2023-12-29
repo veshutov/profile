@@ -1,0 +1,44 @@
+---
+export interface Props {
+  className?: string,
+  companyName: string;
+  companyLogo: string;
+  companyLogoStyle: string;
+  companyLogoDescription: string;
+  position: string;
+  dateRange: string;
+  project: string;
+  achivements: Array<string>;
+}
+
+const {
+  className,
+  companyName,
+  companyLogo,
+  companyLogoStyle,
+  companyLogoDescription,
+  position,
+  dateRange,
+  project,
+  achivements,
+} = Astro.props;
+---
+
+<div class=`overflow-auto mb-5 md:flex md:items-center ${className}`>
+  <figure class="lg:float-left md:mr-5 mb-0">
+    <img
+      class={companyLogoStyle}
+      src={companyLogo}
+      alt={companyLogoDescription}
+    />
+  </figure>
+  <div>
+    <p class="font-bold">{companyName}</p>
+    <p>{position}</p>
+    <p>{dateRange}</p>
+  </div>
+</div>
+<p class="font-medium">{project}</p>
+<ul class="list-disc">
+  {achivements.map((achivement) => <li>{achivement}</li>)}
+</ul>

@@ -1,0 +1,77 @@
+---
+import WorkExperience from "../components/WorkExperience.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Опыт";
+const description = "Опыт работы";
+const permalink = `${Astro.site.href}experience`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  current="experience"
+>
+  <div class="container">
+    <h1>Опыт</h1>
+    <WorkExperience
+      companyName="Яндекс Плюс"
+      companyLogo="/assets/yandex-plus.jpeg"
+      companyLogoStyle="h-24 w-24 rounded-2xl"
+      companyLogoDescription="Yandex Plus logo"
+      position="Руководитель группы бэкенд разработки"
+      project="Платформа подписки Яндекс Плюс"
+      dateRange="04.2021 – по настоящее время"
+      achivements={[
+        "SDK для привлечения пользователей в подписку из других сервисов экосистемы",
+        "Совместный проект с Samsung для продажи телефонов в рамках подписки",
+        "Сервис финансовой отчетности для проведения платежей по агентской схеме",
+        "Миграция ~20 млн пописок на новую схему биллинга",
+        "Разработка различных механик для начисления баллов",
+        "Распил монолита на сервисы"
+      ]}
+    />
+    <WorkExperience
+    className="mt-10"
+      companyName="Сбербанк"
+      companyLogo="/assets/sberbank.png"
+      companyLogoStyle="h-24 w-24 rounded-full"
+      companyLogoDescription="Sberbank logo"
+      position="Java разработчик"
+      project="IDE для разработки приложений под голосовых ассистентов"
+      dateRange="08.2020 – 01.2021"
+      achivements={[
+        "Возможность совместной работы над проектом внутри IDE",
+        "Покрытие приложения техническими и бизнес метриками, настройка алертов и графиков для мониторинга",
+      ]}
+    />
+    <WorkExperience
+    className="mt-10"
+      companyName="Райффайзенбанк"
+      companyLogo="/assets/raiffeisen.jpeg"
+      companyLogoStyle="h-24 w-24 rounded-2xl"
+      companyLogoDescription="Raiffeisen logo"
+      position="Fullstack разработчик"
+      project="Система управления операционными рисками"
+      dateRange="04.2019 – 08.2020"
+      achivements={[
+        "Разработка системы с нуля",
+        "Основные части системы были разработанны своевременно и согласно требованиям, что позволило соответствовать банку новым требованиям ЦБ РФ"
+      ]}
+    />
+    <WorkExperience
+      className="mt-10"
+      companyName="ITV AxxonSoft"
+      companyLogo="/assets/itv.png"
+      companyLogoStyle="h-24 rounded-2xl mb-2"
+      companyLogoDescription="ITV AxxonSoft logo"
+      position="Java разработчик"
+      project="CRM для автоматизации продаж продуктов компании"
+      dateRange="11.2018 – 04.2019"
+      achivements={[
+        "Успешно и в срок разработаны компоненты системы для взаимодействия с новыми поставщиками"
+      ]}
+    />
+  </div>
+</BaseLayout>

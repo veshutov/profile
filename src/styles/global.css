@@ -3,8 +3,8 @@
   --text-main: #36393b;
   --text-secondary: #6b6f72;
   --primary-color: #548e9b;
-  --font-family-serif: Merriweather, serif;
-  --font-family-sans: 'Fira Sans', sans-serif;
+  --font-family-serif: Ruberoid, serif;
+  --font-family-sans: 'Ruberoid', sans-serif;
 }
 
 :root.theme-dark {
@@ -84,7 +84,6 @@ ul,
 ol {
   font-size: 1.3rem;
   line-height: 1.75em;
-  margin: 1.2em 0;
 }
 
 ol,
@@ -92,10 +91,6 @@ ul {
   padding-left: 2rem;
   -webkit-padding-start: 5%;
   -webkit-padding-end: 5%;
-}
-
-li {
-  margin: 1rem 0;
 }
 
 li p {
@@ -204,7 +199,7 @@ td {
 
 .container {
   margin: 0 auto;
-  max-width: 42em;
+  max-width: 46em;
   width: 100%;
 }
 
