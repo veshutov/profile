@@ -1,7 +1,28 @@
 ---
-import ThemeToggleButton from './ThemeToggleButton.svelte';
-const { current = '' } = Astro.props;
+import BurgerMenu from "./BurgerMenu.svelte";
+import ThemeToggleButton from "./ThemeToggleButton.svelte";
+const { current = "" } = Astro.props;
 ---
+
+<nav>
+  <BurgerMenu client:load />
+  <div class="hidden sm:block">
+    <a class={current === "" ? "selected" : ""} href="/"> главная</a>
+  </div>
+  <div class="hidden sm:block">
+    <a class={current === "experience" ? "selected" : ""} href="/experience">
+      опыт
+    </a>
+  </div>
+  <div class="hidden sm:block">
+    <a class={current === "contact" ? "selected" : ""} href="/contact">
+      контакты
+    </a>
+  </div>
+  <div class="theme-toggle-container">
+    <ThemeToggleButton client:load />
+  </div>
+</nav>
 
 <style>
   nav {
@@ -30,9 +51,9 @@ const { current = '' } = Astro.props;
   }
 
   a::before {
-    content: '';
+    content: "";
     position: absolute;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -54,12 +75,3 @@ const { current = '' } = Astro.props;
     width: 75px;
   }
 </style>
-
-<nav>
-  <a class={current === "" ? "selected" : ""} href='/'>главная</a>
-  <a class={current === "experience" ? "selected" : ""} href='/experience'>опыт</a>
-  <a class={current === "contact" ? "selected" : ""} href='/contact'>контакты</a>
-  <div class="theme-toggle-container">
-    <ThemeToggleButton client:load />
-  </div>
-</nav>
