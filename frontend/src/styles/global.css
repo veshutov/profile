@@ -14,13 +14,8 @@
   --primary-color: #548e9b;
 }
 
-html {
-  overflow-y: scroll;
-}
-
 @supports (scrollbar-gutter: stable) {
-  html {
-    overflow-y: auto;
+  html { 
     scrollbar-gutter: stable;
   }
 }

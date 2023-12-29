@@ -1,9 +1,19 @@
+<script>
+    let menuOpen = false;
+    function handleMenuClick() {
+        !menuOpen && window.scrollTo({ top: 0, behavior: "smooth" });
+        let overflowY = menuOpen ? "auto" : "hidden";
+        document.body.style.overflowY = overflowY;
+        menuOpen = !menuOpen;
+    }
+</script>
+
 <div class="flex sm:hidden">
     <button
         id="burger"
         class="open-main-nav"
         class:is-open={menuOpen}
-        on:click={() => (menuOpen = !menuOpen)}
+        on:click={handleMenuClick}
     >
         <span class="burger"></span>
     </button>
@@ -21,10 +31,6 @@
         </ul>
     </nav>
 </div>
-
-<script>
-    let menuOpen = false;
-</script>
 
 <style>
     /* Main menu positionning */
@@ -55,7 +61,7 @@
         top: 0;
         bottom: 0;
         left: 0;
-        right: -15px;
+        right: 0;
         background: #fedc2a;
         transform-origin: 0 0;
         transform: skew(-14deg) translateX(-120%);
@@ -172,5 +178,5 @@
         transform: translateY(-12px) translateX(10px) skew(-20deg);
         opacity: 0;
     }
-
+    
 </style>
