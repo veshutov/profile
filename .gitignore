@@ -2,6 +2,7 @@
 .idea
 nginx
 
+frontend/.astro
 # build output
 frontend/dist/
 frontend/.output/

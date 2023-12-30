@@ -152,7 +152,7 @@
     .burger {
         position: relative;
         display: block;
-        width: 28px;
+        width: 22px;
         height: 4px;
         margin: 0 auto;
         background: #6b6f72;

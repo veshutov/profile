@@ -18,9 +18,7 @@ const { current = "" } = Astro.props;
       контакты
     </a>
   </div>
-  <div class="theme-toggle-container">
-    <ThemeToggleButton client:load />
-  </div>
+  <ThemeToggleButton client:load />
   <BurgerMenu client:load />
 </nav>
 
@@ -68,9 +66,5 @@ const { current = "" } = Astro.props;
 
   .selected::before {
     background: var(--primary-color);
-  }
-
-  .theme-toggle-container {
-    width: 75px;
   }
 </style>
